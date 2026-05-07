@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HORIZON | Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              horizon: {
+                bg: "#020617",
+                gold: "#D4AF37"
+              }
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              sans: ["Inter", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="font-sans text-white antialiased">
+    <header data-navbar class="fixed inset-x-0 top-0 z-40 transition-all duration-300">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="font-display text-2xl tracking-[0.3em] text-white">HORIZON</a>
+        <nav class="hidden items-center gap-8 md:flex">
+          <a href="index.html" class="text-sm uppercase tracking-[0.24em] text-slate-300 transition hover:text-white">Home</a>
+          <a href="products.html" class="text-sm uppercase tracking-[0.24em] text-slate-300 transition hover:text-white">Collection</a>
+          <a href="checkout.html" class="text-sm uppercase tracking-[0.24em] text-amber-200">Checkout</a>
+        </nav>
+        <button data-cart-trigger class="relative rounded-full border border-amber-300/20 p-3 text-slate-100 transition hover:border-amber-300/50 hover:text-amber-200">
+          <i data-lucide="shopping-bag"></i>
+          <span data-cart-count class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-amber-300 px-1 text-[10px] font-bold text-slate-950">0</span>
+        </button>
+      </div>
+      <div class="mx-auto flex max-w-7xl items-center justify-center gap-6 px-5 pb-4 text-xs uppercase tracking-[0.24em] text-slate-300 md:hidden">
+        <a href="index.html" class="transition hover:text-white">Home</a>
+        <a href="products.html" class="transition hover:text-white">Collection</a>
+        <a href="checkout.html" class="text-amber-200">Checkout</a>
+      </div>
+    </header>
+
+    <main class="pt-28">
+      <section class="mx-auto max-w-7xl px-5 pb-20 sm:px-6 lg:px-8">
+        <div class="mb-8 section-fade">
+          <p class="text-sm uppercase tracking-[0.36em] text-amber-200/70">Checkout</p>
+          <h1 class="mt-4 font-display text-4xl text-white sm:text-5xl">A seamless final step.</h1>
+          <p class="mt-4 max-w-3xl text-sm leading-8 text-slate-300 sm:text-base">
+            Complete your order with minimal friction. The form validates required details in real time on submission,
+            while your order summary updates dynamically from the shared cart.
+          </p>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <section class="glass-card section-fade rounded-[32px] p-7 sm:p-8">
+            <form data-checkout-form novalidate class="grid gap-5">
+              <div class="grid gap-5 sm:grid-cols-2">
+                <label class="grid gap-2 text-sm text-slate-300">
+                  First Name
+                  <input data-required type="text" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="Amelia" />
+                </label>
+                <label class="grid gap-2 text-sm text-slate-300">
+                  Last Name
+                  <input data-required type="text" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="Laurent" />
+                </label>
+              </div>
+
+              <label class="grid gap-2 text-sm text-slate-300">
+                Email Address
+                <input data-required type="email" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="collector@horizon.com" />
+              </label>
+
+              <label class="grid gap-2 text-sm text-slate-300">
+                Street Address
+                <input data-required type="text" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="45 Rue de l'Horlogerie" />
+              </label>
+
+              <div class="grid gap-5 sm:grid-cols-3">
+                <label class="grid gap-2 text-sm text-slate-300 sm:col-span-1">
+                  City
+                  <input data-required type="text" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="Geneva" />
+                </label>
+                <label class="grid gap-2 text-sm text-slate-300 sm:col-span-1 ">
+                  ZIP Code
+                  <input data-required type="text" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="1201" />
+                </label>
+                <label class="grid gap-2 text-sm text-slate-300 sm:col-span-1">
+                  Country
+                  <input data-required type="text" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="Switzerland" />
+                </label>
+              </div>
+
+              <div class="grid gap-5 sm:grid-cols-2">
+                <label class="grid gap-2 text-sm text-slate-300">
+                  Card Number
+                  <input data-required type="text" inputmode="numeric" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="4242 4242 4242 4242" />
+                </label>
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <label class="grid gap-2 text-sm text-slate-300">
+                    Expiry
+                    <input data-required type="text" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="12/28" />
+                  </label>
+                  <label class="grid gap-2 text-sm text-slate-300">
+                    CVV
+                    <input data-required type="text" inputmode="numeric" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="347" />
+                  </label>
+                </div>
+              </div>
+
+              <label class="grid gap-2 text-sm text-slate-300">
+                Delivery Notes
+                <textarea rows="4" class="rounded-2xl border border-amber-300/15 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-amber-300/50" placeholder="Preferred delivery date, concierge instructions, or gifting note."></textarea>
+              </label>
+
+              <button
+                type="submit"
+                class="btn-shimmer mt-2 inline-flex items-center justify-center rounded-full bg-amber-300 px-7 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-950 transition hover:bg-amber-200"
+              >
+                Place Order
+              </button>
+              <p data-form-status class="mt-1 text-sm text-slate-400">Secure checkout with personalized post-purchase concierge support.</p>
+            </form>
+          </section>
+
+          <aside class="glass-card section-fade rounded-[32px] p-7 sm:p-8">
+            <p class="text-sm uppercase tracking-[0.36em] text-amber-200/70">Order Summary</p>
+            <h2 class="mt-4 font-display text-3xl text-white">Selected Timepieces</h2>
+            <div data-checkout-summary class="mt-6"></div>
+            <a
+              href="products.html"
+              class="mt-8 inline-flex items-center justify-center rounded-full border border-amber-300/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:border-amber-300/50 hover:text-amber-200"
+            >
+              Add More Pieces
+            </a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-amber-300/10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-slate-400 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <p>White-glove delivery and insured shipping worldwide.</p>
+        <div class="flex items-center gap-5">
+          <a href="index.html" class="transition hover:text-white">Home</a>
+          <a href="products.html" class="transition hover:text-white">Collection</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

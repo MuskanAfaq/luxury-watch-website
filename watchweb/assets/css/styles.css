@@ -1,0 +1,163 @@
+:root {
+  --bg: #020617;
+  --gold: #d4af37;
+  --gold-soft: rgba(212, 175, 55, 0.2);
+  --gold-line: rgba(212, 175, 55, 0.14);
+  --white-soft: rgba(255, 255, 255, 0.8);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 22%),
+    var(--bg);
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.54);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--gold-line);
+  box-shadow: 0 20px 80px rgba(2, 6, 23, 0.45);
+}
+
+.gold-divider {
+  border-color: var(--gold-line);
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.section-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-solid {
+  background: rgba(2, 6, 23, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--gold-line);
+}
+
+.hero-parallax {
+  background-image:
+    linear-gradient(to right, rgba(2, 6, 23, 0.94), rgba(2, 6, 23, 0.58)),
+    url("https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  inset: -120% auto auto -40%;
+  width: 42%;
+  height: 280%;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.04) 30%,
+    rgba(255, 255, 255, 0.35) 48%,
+    rgba(255, 255, 255, 0.06) 58%,
+    transparent 100%
+  );
+  transform: rotate(18deg) translateX(-180%);
+  transition: transform 0.7s ease;
+}
+
+.btn-shimmer:hover::before {
+  transform: rotate(18deg) translateX(460%);
+}
+
+.watch-image {
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.watch-card:hover .watch-image {
+  transform: scale(1.08);
+  filter: saturate(1.08);
+}
+
+.cart-overlay {
+  background: rgba(2, 6, 23, 0.58);
+  transition: opacity 0.4s ease;
+}
+
+.cart-panel {
+  transform: translateX(100%);
+  transition: transform 0.4s ease-out;
+}
+
+.cart-panel.open {
+  transform: translateX(0);
+}
+
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-overlay.closed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.timer-chip {
+  min-width: 92px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.34);
+}
+
+.field-error {
+  border-color: rgba(248, 113, 113, 0.6) !important;
+  box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.22);
+}
+
+[data-checkout-form] label,
+[data-checkout-form] div {
+  min-width: 0;
+}
+
+[data-checkout-form] input,
+[data-checkout-form] textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .hero-parallax {
+    background-attachment: scroll;
+  }
+}

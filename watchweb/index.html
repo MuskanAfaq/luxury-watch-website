@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HORIZON | Luxury Watches</title>
+    <meta
+      name="description"
+      content="HORIZON crafts luxury timepieces with precision engineering, timeless form, and modern sophistication."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              horizon: {
+                bg: "#020617",
+                gold: "#D4AF37"
+              }
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              sans: ["Inter", "sans-serif"]
+            },
+            boxShadow: {
+              luxe: "0 24px 70px rgba(2, 6, 23, 0.45)"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="font-sans text-white antialiased">
+    <header data-navbar class="fixed inset-x-0 top-0 z-40 transition-all duration-300">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="font-display text-2xl tracking-[0.3em] text-white">HORIZON</a>
+        <nav class="hidden items-center gap-8 md:flex">
+          <a href="index.html" class="text-sm uppercase tracking-[0.24em] text-amber-200">Home</a>
+          <a href="products.html" class="text-sm uppercase tracking-[0.24em] text-slate-300 transition hover:text-white">Collection</a>
+          <a href="checkout.html" class="text-sm uppercase tracking-[0.24em] text-slate-300 transition hover:text-white">Checkout</a>
+        </nav>
+        <button data-cart-trigger class="relative rounded-full border border-amber-300/20 p-3 text-slate-100 transition hover:border-amber-300/50 hover:text-amber-200">
+          <i data-lucide="shopping-bag"></i>
+          <span data-cart-count class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-amber-300 px-1 text-[10px] font-bold text-slate-950">0</span>
+        </button>
+      </div>
+      <div class="mx-auto flex max-w-7xl items-center justify-center gap-6 px-5 pb-4 text-xs uppercase tracking-[0.24em] text-slate-300 md:hidden">
+        <a href="index.html" class="text-amber-200">Home</a>
+        <a href="products.html" class="transition hover:text-white">Collection</a>
+        <a href="checkout.html" class="transition hover:text-white">Checkout</a>
+      </div>
+    </header>
+
+    <main>
+      <section data-parallax class="hero-parallax relative flex min-h-screen items-center">
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-32 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
+          <div class="max-w-3xl self-center">
+            <p class="section-fade text-sm uppercase tracking-[0.4em] text-amber-200/80">Swiss-inspired Luxury</p>
+            <h1 class="section-fade mt-6 font-display text-5xl leading-tight text-white sm:text-6xl lg:text-7xl">
+              Time, refined into a signature.
+            </h1>
+            <p class="section-fade mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              Discover the world of HORIZON: sculpted cases, precious finishes, and high-complication
+              mechanics designed for collectors who demand quiet prestige.
+            </p>
+            <div class="section-fade mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="products.html"
+                class="btn-shimmer inline-flex items-center justify-center rounded-full bg-amber-300 px-7 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-slate-950 transition hover:bg-amber-200"
+              >
+                Explore Collection
+              </a>
+              <button
+                data-cart-trigger
+                class="inline-flex items-center justify-center rounded-full border border-amber-300/30 px-7 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:border-amber-300/60 hover:text-amber-200"
+              >
+                View Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="section-fade self-end lg:justify-self-end">
+            <div class="glass-card rounded-[32px] p-6 sm:p-8">
+              <p class="text-xs uppercase tracking-[0.36em] text-amber-200/70">Collector's Note</p>
+              <h2 class="mt-4 font-display text-3xl text-white">Limited Edition Meridian No. 7</h2>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                A numbered release featuring meteorite dial detailing, hand-finished gold indices, and a
+                72-hour reserve movement visible through sapphire crystal.
+              </p>
+              <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4" data-countdown>
+                <div class="timer-chip rounded-2xl border border-amber-300/15 bg-white/5 p-4 text-center">
+                  <div data-days class="font-display text-3xl text-white">00</div>
+                  <div class="mt-2 text-[11px] uppercase tracking-[0.28em] text-slate-400">Days</div>
+                </div>
+                <div class="timer-chip rounded-2xl border border-amber-300/15 bg-white/5 p-4 text-center">
+                  <div data-hours class="font-display text-3xl text-white">00</div>
+                  <div class="mt-2 text-[11px] uppercase tracking-[0.28em] text-slate-400">Hours</div>
+                </div>
+                <div class="timer-chip rounded-2xl border border-amber-300/15 bg-white/5 p-4 text-center">
+                  <div data-minutes class="font-display text-3xl text-white">00</div>
+                  <div class="mt-2 text-[11px] uppercase tracking-[0.28em] text-slate-400">Minutes</div>
+                </div>
+                <div class="timer-chip rounded-2xl border border-amber-300/15 bg-white/5 p-4 text-center">
+                  <div data-seconds class="font-display text-3xl text-white">00</div>
+                  <div class="mt-2 text-[11px] uppercase tracking-[0.28em] text-slate-400">Seconds</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
+        <div class="section-fade flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm uppercase tracking-[0.36em] text-amber-200/70">Featured Collection</p>
+            <h2 class="mt-4 font-display text-4xl text-white sm:text-5xl">Modern heirlooms for every horizon.</h2>
+          </div>
+          <p class="max-w-2xl text-sm leading-7 text-slate-300">
+            Built with polished restraint and exceptional mechanical accuracy, every Horizon watch is meant
+            to feel personal, architectural, and unforgettable.
+          </p>
+        </div>
+
+        <div data-featured-grid class="mt-12 grid gap-6 md:grid-cols-2"></div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 pb-20 sm:px-6 lg:px-8">
+        <div class="glass-card section-fade grid gap-10 rounded-[32px] p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-10">
+          <div>
+            <p class="text-sm uppercase tracking-[0.36em] text-amber-200/70">Craftsmanship</p>
+            <h2 class="mt-4 font-display text-4xl text-white">Premium details, designed to endure.</h2>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-3">
+            <div>
+              <h3 class="font-display text-2xl text-white">01</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Anti-reflective sapphire crystal with precision-polished edges.</p>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl text-white">02</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">High-grade automatic movements regulated for daily reliability.</p>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl text-white">03</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Hand-finished cases pairing slate depth with warm gold accents.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-amber-300/10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-slate-400 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <p>HORIZON Luxury Watches</p>
+        <div class="flex items-center gap-5">
+          <a href="products.html" class="transition hover:text-white">Collection</a>
+          <a href="checkout.html" class="transition hover:text-white">Checkout</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
